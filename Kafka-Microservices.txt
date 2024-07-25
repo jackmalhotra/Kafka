@@ -1,0 +1,26 @@
+START THE KAFKA ENVIRONMENT
+
+# Start the ZooKeeper service
+E:\kafka_2.13-3.7.0>bin\windows\zookeeper-server-start.bat config\zookeeper.properties
+
+# Start the Kafka broker service
+E:\kafka_2.13-3.7.0>bin\windows\kafka-server-start.bat config\server.properties
+
+# CREATE A TOPIC TO STORE YOUR EVENTS/Data/messages
+E:\kafka_2.13-3.7.0>bin\windows\kafka-topics.bat --create --topic user-topic --bootstrap-server localhost:9092
+Created topic user-topic.
+
+# WRITE SOME EVENTS/Messages/Data INTO THE TOPIC
+E:\kafka_2.13-3.7.0>bin\windows\kafka-console-producer.bat --topic user-topic --bootstrap-server localhost:9092
+>Hii Jack is here
+>Hii Jack wants some special Discussion
+
+# READ THE EVENTS/Messages/Data FROM THE TOPIC
+E:\kafka_2.13-3.7.0>bin\windows\kafka-console-consumer.bat --topic user-topic --from-beginning --bootstrap-server localhost:9092
+Hii Jack is here
+Hii Jack wants some special Discussion
+
+
+# Created to Spring Boot Project
+1. deliverybuddyApp
+2. enduserApp
